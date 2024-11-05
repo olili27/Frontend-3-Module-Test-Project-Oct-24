@@ -36,8 +36,8 @@ async function displayData(data) {
     tableBody.appendChild(tableRow);
     table.appendChild(tableBody);
   });
-
-  tableContainer.append(table);
+  tableContainer.innerHTML = "";
+  tableContainer.appendChild(table);
 }
 
 function fetchDataThen(url) {
@@ -90,7 +90,7 @@ function search(event) {
 }
 
 function sort(key) {
-  store.sort((a, b) => a[key] - b[key])
+  store.sort((a, b) => b[key] - a[key])
   displayData(store)
 }
 
